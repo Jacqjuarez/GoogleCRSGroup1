@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 
 import argparse
 import time
@@ -116,9 +116,7 @@ def main():
 		help='Enable camera preview')
 	args = parser.parse_args()
 
-	# Forced sensor mode, 1640x1232, full FoV. See:
-	# https://picamera.readthedocs.io/en/release-1.13/fov.html#sensor-modes
-	# This is the resolution inference run on.
+	
 	with PiCamera(sensor_mode=4, resolution=(1640, 1232), framerate=30) as camera:
 		camera.start_preview()
 		camera.annotate_text_size = 60
